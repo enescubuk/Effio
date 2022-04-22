@@ -18,10 +18,17 @@ public class tilesetController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log(Camera.main.ScreenPointToRay(Input.mousePosition));
+            //Debug.Log(Camera.main.ScreenPointToRay(Input.mousePosition));
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             location = tiles.WorldToCell(pos);
             tiles.SetTile(location , tile);
+            
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            location = tiles.WorldToCell(pos);
+            Debug.Log(tiles.GetTile(location).name);
         }
     }
     

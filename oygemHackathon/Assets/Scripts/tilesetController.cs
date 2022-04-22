@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
-public class asd : MonoBehaviour
+public class tilesetController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Tilemap tiles;
+    public Tile tile;
+    public Vector3Int location;
     void Start()
     {
         
@@ -16,6 +19,9 @@ public class asd : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log(Camera.main.ScreenPointToRay(Input.mousePosition));
+            Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            location = tiles.WorldToCell(pos);
+            tiles.SetTile(location , tile);
         }
     }
     

@@ -9,19 +9,14 @@ public class positionControl : MonoBehaviour
     public Text coinText;
     private int coin=120;
     public GameObject panel;
-    //public Camera camera;
-
     public Tilemap tiles;
-
     public Tile[] tile;
-    
     public Vector3Int location;
-
-   public bool isOpen;
-
+    public bool isOpen;
     public GameObject whichPoint;
+    public tilesetController tileScript;
 
-   public tilesetController tileScript;
+    bool isChange;
     void Start()
     {
         
@@ -31,47 +26,45 @@ public class positionControl : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && isOpen == false)
         {
-           
-            
-
-            
-            
             panel.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
             location = tiles.WorldToCell(panel.transform.position);
-
             panel.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, 0);
-
-            if (tiles.GetTile(location) != null)
+            if (tiles.GetTile(location).name != null)
             {
                 panel.SetActive(true);
                 isOpen = true;
+                if (tiles.GetTile(location).name != "bosyol_4")
+                {
+                    isChange = true;
+                    Debug.Log(31);
+                }
             }
-
-            
-            Debug.Log(Input.mousePosition);
-            
         }
         coinText.text = "" + coin;
     }
 
     public void path1()
     {
+        if (isChange == true)
+        {
+            Debug.Log(32);
+            tiles.SetTile(location, null);
+        }
         coin -= 50;
         panel.SetActive(false);
-
         tiles.SetTile(location, tile[0]);
-
         GameObject point = Instantiate(whichPoint);
-
         point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
-
         tileScript.points.Add(point);
-
         isOpen = false;
     }
     public void path2()
     {
+        if (isChange == true)
+        {
+            Debug.Log(32);
+            tiles.SetTile(location, null);
+        }
         coin -= 50;
         panel.SetActive(false);
         tiles.SetTile(location, tile[1]);
@@ -82,6 +75,11 @@ public class positionControl : MonoBehaviour
     }
     public void path3()
     {
+        if (isChange == true)
+        {
+            Debug.Log(32);
+            tiles.SetTile(location, null);
+        }
         coin -= 50;
         panel.SetActive(false);
         tiles.SetTile(location, tile[2]);
@@ -92,6 +90,11 @@ public class positionControl : MonoBehaviour
     }
     public void path4()
     {
+        if (isChange == true)
+        {
+            Debug.Log(32);
+            tiles.SetTile(location, null);
+        }
         coin -= 90;
         panel.SetActive(false);
         tiles.SetTile(location, tile[3]);
@@ -102,6 +105,11 @@ public class positionControl : MonoBehaviour
     }
     public void path5()
     {
+        if (isChange == true)
+        {
+            Debug.Log(32);
+            tiles.SetTile(location, null);
+        }
         coin -= 90;
         panel.SetActive(false);
         tiles.SetTile(location, tile[4]);
@@ -112,6 +120,11 @@ public class positionControl : MonoBehaviour
     }
     public void path6()
     {
+        if (isChange == true)
+        {
+            Debug.Log(32);
+            tiles.SetTile(location, null);
+        }
         coin -= 90;
         panel.SetActive(false);
         tiles.SetTile(location, tile[5]);
@@ -122,6 +135,11 @@ public class positionControl : MonoBehaviour
     }
     public void path7()
     {
+        if (isChange == true)
+        {
+            Debug.Log(32);
+            tiles.SetTile(location, null);
+        }
         coin -= 30;
         panel.SetActive(false);
         tiles.SetTile(location, tile[6]);
@@ -132,6 +150,11 @@ public class positionControl : MonoBehaviour
     }
     public void path8()
     {
+        if (isChange == true)
+        {
+            Debug.Log(32);
+            tiles.SetTile(location, null);
+        }
         coin -= 30;
         panel.SetActive(false);
         tiles.SetTile(location, tile[7]);
@@ -139,9 +162,15 @@ public class positionControl : MonoBehaviour
         point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
         tileScript.points.Add(point);
         isOpen = false;
+        
     }
     public void path9()
     {
+        if (isChange == true)
+        {
+            Debug.Log(32);
+            tiles.SetTile(location, null);
+        }
         coin -= 30;
         panel.SetActive(false);
         tiles.SetTile(location, tile[8]);
@@ -149,9 +178,15 @@ public class positionControl : MonoBehaviour
         point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
         tileScript.points.Add(point);
         isOpen = false;
+        
     }
     public void path10()
     {
+        if (isChange == true)
+        {
+            Debug.Log(32);
+            tiles.SetTile(location, null);
+        }
         coin -= 120;
         panel.SetActive(false);
         tiles.SetTile(location, tile[9]);

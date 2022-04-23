@@ -54,11 +54,4 @@ public class tilesetController : MonoBehaviour
             Debug.Log(tiles.GetTile(location).name);
         }
     }
-    private void OnMouseDown()
-    {
-        
-    }
-
-  
-
 }

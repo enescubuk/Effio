@@ -9,7 +9,11 @@ public class CarManager : MonoBehaviour
     public float speed;
     
     bool start = false;
+
+
     public List<GameObject> points;
+
+    public 
     
 
 

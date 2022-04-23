@@ -16,6 +16,8 @@ public class tilesetController : MonoBehaviour
     public List<GameObject> points;
 
     public GameObject[] whichPoint;
+
+    public positionControl posScript;
     void Start()
     {
         
@@ -24,11 +26,11 @@ public class tilesetController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && posScript.isOpen == false)
         {
             
 
-            //
+            /*
             //Debug.Log(Camera.main.ScreenPointToRay(Input.mousePosition));
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             location = tiles.WorldToCell(pos);
@@ -41,7 +43,7 @@ public class tilesetController : MonoBehaviour
 
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y+0.5f, tiles.CellToWorld(location).z);
 
-            points.Add(point);
+            points.Add(point);*/
             
 
         }

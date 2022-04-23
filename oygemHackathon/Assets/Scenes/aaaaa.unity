@@ -421,6 +421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 937996476}
   - component: {fileID: 937996475}
+  - component: {fileID: 937996477}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -455,6 +456,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &937996477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937996474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0afd94b4fba7004f8fcab0c535a76b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiles: {fileID: 596514839}
+  tile: {fileID: 11400000, guid: c1f54f49cc818eb479c3aacd01f8461c, type: 2}
+  location: {x: 0, y: 0, z: 0}
 --- !u!1 &1029559026
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,10 @@ public class tilesetController : MonoBehaviour
     public Tilemap tiles;
     public Tile tile;
     public Vector3Int location;
+
+    public GameObject movePoint;
+
+    public List<GameObject> points;
     void Start()
     {
         
@@ -18,10 +22,19 @@ public class tilesetController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+           
+            //
             //Debug.Log(Camera.main.ScreenPointToRay(Input.mousePosition));
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             location = tiles.WorldToCell(pos);
+
             tiles.SetTile(location , tile);
+            
+            
+            GameObject point = Instantiate(movePoint);
+            point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y+0.5f, tiles.CellToWorld(location).z);
+
+            points.Add(point);
             
         }
         else if (Input.GetMouseButtonDown(1))

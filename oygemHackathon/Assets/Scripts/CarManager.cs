@@ -8,12 +8,12 @@ public class CarManager : MonoBehaviour
     public tilesetController tileScript;
     public float speed;
     
-    bool start = false;
+    public bool start = false;
 
 
     public List<GameObject> points;
 
-    public 
+    public int i; 
     
 
 
@@ -35,7 +35,7 @@ public class CarManager : MonoBehaviour
             if (Vector2.Distance(gameObject.transform.position, tileScript.points[i].transform.position) <= 0.2f)
             {
                 tileScript.points.Remove(tileScript.points[i]);
-
+                i++;
             }
 
         }
@@ -46,8 +46,9 @@ public class CarManager : MonoBehaviour
         if (start)
         {
 
-            transform.position = Vector2.MoveTowards(gameObject.transform.position, GetClosestPoint(tileScript.points).position, speed * Time.deltaTime);
-            start = false;
+            transform.position = Vector2.MoveTowards(gameObject.transform.position, tileScript.points[i].transform.position, speed * Time.deltaTime);
+
+            
         }
 
     }

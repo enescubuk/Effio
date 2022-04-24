@@ -129,7 +129,7 @@ public class CarManager : MonoBehaviour
             }
             else
             {
-                transform.position = Vector2.MoveTowards(gameObject.transform.position, tileScript.points[0].transform.position, speed * Time.deltaTime);   
+                transform.position = Vector2.MoveTowards(gameObject.transform.position, tileScript.points[0].transform.position, (speed) * Time.deltaTime);   
             }
             
                // transform.position = Vector2.MoveTowards(gameObject.transform.position, tileScript.points[0].transform.position, speed * Time.deltaTime);
@@ -140,21 +140,25 @@ public class CarManager : MonoBehaviour
     }
     void speedChange()
     {
+        Debug.Log("girdi");
         Vector3Int carGrid = tileScript.tiles.WorldToCell(transform.position);
         if (tileScript.tiles.GetTile(carGrid).name.Contains("Asp"))
         {
-            
-            speed = speed - (1/3);
+            float newSpeed = speed * 60;
+            newSpeed = newSpeed - 20;
+            speed = newSpeed / 60;
         }
         if (tileScript.tiles.GetTile(carGrid).name.Contains("Dirt"))
         {
-            
-            speed = speed - (1/2);
+            float newSpeed = speed * 60;
+            newSpeed = newSpeed - 30;
+            speed = newSpeed / 60;
         }
         if (tileScript.tiles.GetTile(carGrid).name.Contains("Ice"))
         {
-            
-            speed = speed + (2*1/3);
+            float newSpeed = speed * 60;
+            newSpeed = newSpeed + 30;
+            speed = newSpeed / 60;
         }
     }
     Transform GetClosestPoint(List<GameObject> enemies)
@@ -181,7 +185,8 @@ public class CarManager : MonoBehaviour
         }
        
         return tMin;
+        
     }
    
 
-}
+}   

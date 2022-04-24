@@ -22,6 +22,8 @@ public class startUi : MonoBehaviour
     {
         location = tiles.WorldToCell(startFlag.transform.position);
         carLocation = tiles.WorldToCell(car.transform.position);
+        Debug.Log(location);
+        Debug.Log(carLocation);
         if (carLocation == location)
         {
             if (CarManager.locationControl==true)
@@ -35,5 +37,6 @@ public class startUi : MonoBehaviour
     IEnumerator asd()
     {
         yield return new WaitForSeconds(2);
+        Debug.Log("asdasd");
     }
 }

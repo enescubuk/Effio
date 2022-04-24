@@ -17,6 +17,9 @@ public class positionControl : MonoBehaviour
     public tilesetController tileScript;
     int decrease;
     bool isChange;
+
+    public float firstStarLimit,secondStarLimit,thirdStarLimit;
+    public GameObject[] stars;
     void Start()
     {
 
@@ -61,6 +64,25 @@ public class positionControl : MonoBehaviour
             
         }
         coinText.text = "" + coin;
+    }
+    
+    void star()
+    {
+        if (coin > firstStarLimit)
+        {
+            
+            stars[0].SetActive(true);
+        }
+        if (coin > secondStarLimit)
+        {
+        
+            stars[1].SetActive(true);
+        }
+        if (coin > thirdStarLimit)
+        {
+            
+            stars[2].SetActive(true);
+        }
     }
 
     public void path1()

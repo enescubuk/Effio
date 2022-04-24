@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class CarManager : MonoBehaviour
 {
+    public GameObject smoke;
     public tilesetController tileScript;
     public float speed;
     public bool locationControl;
@@ -35,6 +36,23 @@ public class CarManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GetComponent<SpriteRenderer>().sprite == sprites[0])
+        {
+            smoke.transform.localPosition = new Vector3(0.16f, 0.14f, 0);
+        }
+        if (GetComponent<SpriteRenderer>().sprite == sprites[1])
+        {
+            smoke.transform.localPosition = new Vector3(0.16f, -0.14f, 0);
+        }
+        if (GetComponent<SpriteRenderer>().sprite == sprites[2])
+        {
+
+            smoke.transform.localPosition = new Vector3(-0.16f, -0.14f, 0);
+        }
+        if (GetComponent<SpriteRenderer>().sprite == sprites[3])
+        {
+            smoke.transform.localPosition = new Vector3(-0.16f, 0.14f, 0);
+        }
         
         if (tileScript.points.Count!=0)
         {
@@ -185,7 +203,7 @@ public class CarManager : MonoBehaviour
         }
        
         return tMin;
-        
+
     }
    
 

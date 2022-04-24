@@ -3468,7 +3468,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8166710274925509176, guid: c8bcb1cd6e6ef644ca5e691a58452c48, type: 3}
+  m_Sprite: {fileID: 5051859853793176799, guid: c8bcb1cd6e6ef644ca5e691a58452c48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3512,6 +3512,15 @@ MonoBehaviour:
   nullGameobject: {fileID: 468537982}
   points: []
   i: 0
+  carLocation: {x: 0, y: 0, z: 0}
+  tiles: {fileID: 209026125}
+  tile: []
+  location: {x: 0, y: 0, z: 0}
+  sprites:
+  - {fileID: 8166710274925509176, guid: c8bcb1cd6e6ef644ca5e691a58452c48, type: 3}
+  - {fileID: 5051859853793176799, guid: c8bcb1cd6e6ef644ca5e691a58452c48, type: 3}
+  - {fileID: 7704824324137736895, guid: c8bcb1cd6e6ef644ca5e691a58452c48, type: 3}
+  - {fileID: -7284920240449452302, guid: c8bcb1cd6e6ef644ca5e691a58452c48, type: 3}
 --- !u!1 &1174737453
 GameObject:
   m_ObjectHideFlags: 0
@@ -5192,6 +5201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinText: {fileID: 1006514990}
+  coin: 120
   panel: {fileID: 1208396668}
   tiles: {fileID: 209026125}
   tile:

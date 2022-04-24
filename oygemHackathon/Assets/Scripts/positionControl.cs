@@ -7,7 +7,7 @@ using UnityEngine.Tilemaps;
 public class positionControl : MonoBehaviour
 {
     public Text coinText;
-    private int coin = 120;
+    public int coin = 120;
     public GameObject panel;
     public Tilemap tiles;
     public Tile[] tile;
@@ -29,7 +29,12 @@ public class positionControl : MonoBehaviour
             panel.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             location = tiles.WorldToCell(panel.transform.position);
             panel.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, 0);
-            if (tiles.GetTile(location).name != null)
+
+            if (tiles.GetTile(location) == null)
+            {
+                Debug.Log(31);
+            }
+            else
             {
                 panel.SetActive(true);
                 isOpen = true;
@@ -51,6 +56,7 @@ public class positionControl : MonoBehaviour
                         decrease = 90;
                     }
                 }
+                
             }
             
         }
@@ -100,7 +106,6 @@ public class positionControl : MonoBehaviour
     {
         coin -= 50;
         panel.SetActive(false);
-        
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
             Debug.Log("boştu");
@@ -249,6 +254,160 @@ public class positionControl : MonoBehaviour
             coin += decrease;
         }
         tiles.SetTile(location, tile[9]);
+        isOpen = false;
+    }
+    public void path11()
+    {
+        coin -= 120;
+        panel.SetActive(false);
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
+        {
+            Debug.Log("boştu");
+            GameObject point = Instantiate(whichPoint);
+            point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
+            tileScript.points.Add(point);
+        }
+        else
+        {
+            Debug.Log("doluydu10");
+            coin += decrease;
+        }
+        tiles.SetTile(location, tile[10]);
+        isOpen = false;
+    }
+    public void path12()
+    {
+        coin -= 120;
+        panel.SetActive(false);
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
+        {
+            Debug.Log("boştu");
+            GameObject point = Instantiate(whichPoint);
+            point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
+            tileScript.points.Add(point);
+        }
+        else
+        {
+            Debug.Log("doluydu10");
+            coin += decrease;
+        }
+        tiles.SetTile(location, tile[11]);
+        isOpen = false;
+    }
+    public void path13()
+    {
+        coin -= 120;
+        panel.SetActive(false);
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
+        {
+            Debug.Log("boştu");
+            GameObject point = Instantiate(whichPoint);
+            point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
+            tileScript.points.Add(point);
+        }
+        else
+        {
+            Debug.Log("doluydu10");
+            coin += decrease;
+        }
+        tiles.SetTile(location, tile[12]);
+        isOpen = false;
+    }
+
+    public void path14()
+    {
+        coin -= 120;
+        panel.SetActive(false);
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
+        {
+            Debug.Log("boştu");
+            GameObject point = Instantiate(whichPoint);
+            point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
+            tileScript.points.Add(point);
+        }
+        else
+        {
+            Debug.Log("doluydu10");
+            coin += decrease;
+        }
+        tiles.SetTile(location, tile[13]);
+        isOpen = false;
+    }
+
+    public void path15()
+    {
+        coin -= 120;
+        panel.SetActive(false);
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
+        {
+            Debug.Log("boştu");
+            GameObject point = Instantiate(whichPoint);
+            point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
+            tileScript.points.Add(point);
+        }
+        else
+        {
+            Debug.Log("doluydu10");
+            coin += decrease;
+        }
+        tiles.SetTile(location, tile[14]);
+        isOpen = false;
+    }
+    public void path16()
+    {
+        coin -= 120;
+        panel.SetActive(false);
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
+        {
+            Debug.Log("boştu");
+            GameObject point = Instantiate(whichPoint);
+            point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
+            tileScript.points.Add(point);
+        }
+        else
+        {
+            Debug.Log("doluydu10");
+            coin += decrease;
+        }
+        tiles.SetTile(location, tile[15]);
+        isOpen = false;
+    }
+    public void path17()
+    {
+        coin -= 120;
+        panel.SetActive(false);
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
+        {
+            Debug.Log("boştu");
+            GameObject point = Instantiate(whichPoint);
+            point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
+            tileScript.points.Add(point);
+        }
+        else
+        {
+            Debug.Log("doluydu10");
+            coin += decrease;
+        }
+        tiles.SetTile(location, tile[16]);
+        isOpen = false;
+    }
+    public void path18()
+    {
+        coin -= 120;
+        panel.SetActive(false);
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
+        {
+            Debug.Log("boştu");
+            GameObject point = Instantiate(whichPoint);
+            point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
+            tileScript.points.Add(point);
+        }
+        else
+        {
+            Debug.Log("doluydu10");
+            coin += decrease;
+        }
+        tiles.SetTile(location, tile[17]);
         isOpen = false;
     }
 }

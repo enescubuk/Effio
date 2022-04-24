@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: isometricMap_4
+  m_Name: Dirt_1
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -3128860956953013212, guid: 69126291880dbc64d98f664cdbf00ad3, type: 3}
+  m_Sprite: {fileID: 3607879027503999137, guid: 9d93fe313ec8a0c489af70a3a3e8a2ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

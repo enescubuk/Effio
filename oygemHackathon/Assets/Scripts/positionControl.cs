@@ -7,7 +7,7 @@ using UnityEngine.Tilemaps;
 public class positionControl : MonoBehaviour
 {
     public Text coinText;
-    private int coin=120;
+    private int coin = 120;
     public GameObject panel;
     public Tilemap tiles;
     public Tile[] tile;
@@ -19,7 +19,7 @@ public class positionControl : MonoBehaviour
     bool isChange;
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -162,7 +162,7 @@ public class positionControl : MonoBehaviour
         point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
         tileScript.points.Add(point);
         isOpen = false;
-        
+
     }
     public void path9()
     {
@@ -178,7 +178,7 @@ public class positionControl : MonoBehaviour
         point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
         tileScript.points.Add(point);
         isOpen = false;
-        
+
     }
     public void path10()
     {

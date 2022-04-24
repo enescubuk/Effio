@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: butopragikullanin_0
+  m_Name: Ice_1
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 3591560400991542525, guid: 2d77e5a08dd6f87489f18a577824b620, type: 3}
+  m_Sprite: {fileID: 8045460034997047117, guid: 69126291880dbc64d98f664cdbf00ad3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

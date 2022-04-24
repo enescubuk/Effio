@@ -51,7 +51,7 @@ public class tilesetController : MonoBehaviour
         {
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             location = tiles.WorldToCell(pos);
-            Debug.Log(tiles.GetTile(location).name);
+            
         }
     }
 }

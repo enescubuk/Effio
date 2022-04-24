@@ -27,7 +27,7 @@ public class CarManager : MonoBehaviour
 
     void Start()
     {
-        nullGameobject = GameObject.Find("GameObject");
+        
         tileScript = GameObject.Find("Main Camera").GetComponent<tilesetController>();
         //Vector2.Lerp(gameObject.transform.position, tileScript.points[0].transform.position, speed);
     }
@@ -50,7 +50,7 @@ public class CarManager : MonoBehaviour
                     if (carLocation == location)
                     {
                         a = tiles.GetTile(location).name;
-                        Debug.Log(a);
+                        
 
                         if (a.Contains("4") && a != "bosyol_4")
                         {
@@ -58,7 +58,7 @@ public class CarManager : MonoBehaviour
                             if (GetComponent<SpriteRenderer>().sprite == sprites[0])
                             {
                                 GetComponent<SpriteRenderer>().sprite = sprites[3];
-                                Debug.Log(69);
+                                
                             }
                             if (GetComponent<SpriteRenderer>().sprite == sprites[1])
                             {
@@ -72,7 +72,7 @@ public class CarManager : MonoBehaviour
                             if (GetComponent<SpriteRenderer>().sprite == sprites[2])
                             {
                                 GetComponent<SpriteRenderer>().sprite = sprites[1];
-                                Debug.Log(69);
+                                
                             }
                             if (GetComponent<SpriteRenderer>().sprite == sprites[3])
                             {
@@ -86,7 +86,7 @@ public class CarManager : MonoBehaviour
                             if (GetComponent<SpriteRenderer>().sprite == sprites[3])
                             {
                                 GetComponent<SpriteRenderer>().sprite = sprites[2];
-                                Debug.Log(69);
+                                
                             }
                             if (GetComponent<SpriteRenderer>().sprite == sprites[0])
                             {
@@ -100,7 +100,7 @@ public class CarManager : MonoBehaviour
                             if (GetComponent<SpriteRenderer>().sprite == sprites[2])
                             {
                                 GetComponent<SpriteRenderer>().sprite = sprites[3];
-                                Debug.Log(69);
+                                
                             }
                             if (GetComponent<SpriteRenderer>().sprite == sprites[1])
                             {
@@ -118,8 +118,6 @@ public class CarManager : MonoBehaviour
        
         if (Input.GetKeyDown(KeyCode.A))
         {
-            tileScript.points.Add(nullGameobject);
-            nullGameobject.transform.position = GameObject.Find("bayraklar_0").transform.position;
             start = true;
         }
         if (start)
@@ -145,17 +143,17 @@ public class CarManager : MonoBehaviour
         Vector3Int carGrid = tileScript.tiles.WorldToCell(transform.position);
         if (tileScript.tiles.GetTile(carGrid).name.Contains("Asp"))
         {
-            //Debug.Log("asphalt");
+            
             speed = speed - (1/3);
         }
         if (tileScript.tiles.GetTile(carGrid).name.Contains("Dirt"))
         {
-            Debug.Log("patika");
+            
             speed = speed - (1/2);
         }
         if (tileScript.tiles.GetTile(carGrid).name.Contains("Ice"))
         {
-            Debug.Log("buz");
+            
             speed = speed + (2*1/3);
         }
     }
@@ -170,7 +168,7 @@ public class CarManager : MonoBehaviour
         {
 
                 float dist = Vector3.Distance(t.transform.position, currentPos);
-                Debug.Log(t.transform.position.x);
+                
                 if (dist < minDist)
                 {
 

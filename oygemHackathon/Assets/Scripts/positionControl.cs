@@ -17,9 +17,13 @@ public class positionControl : MonoBehaviour
     public tilesetController tileScript;
     int decrease;
     bool isChange;
+
+    public float firstStarLimit,secondStarLimit,thirdStarLimit;
+    public GameObject[] stars;
+
     void Start()
     {
-
+        
     }
 
     void Update()
@@ -30,9 +34,9 @@ public class positionControl : MonoBehaviour
             location = tiles.WorldToCell(panel.transform.position);
             panel.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, 0);
 
-            if (tiles.GetTile(location) == null || tiles.GetTile(location).name.Contains("coguburda_2") || tiles.GetTile(location).name.Contains("tas"))
+            if (tiles.GetTile(location) == null)
             {
-                Debug.Log(31);
+                
             }
             else
             {
@@ -42,17 +46,17 @@ public class positionControl : MonoBehaviour
                 {
                     if (tiles.GetTile(location).name.Contains("Asp") == true)
                     {
-                        Debug.Log("asfalttı");
+                        
                         decrease = 50;
                     }
                     if (tiles.GetTile(location).name.Contains("Dirt") == true)
                     {
-                        Debug.Log("dirttü");
+                        
                         decrease = 30;
                     }
                     if (tiles.GetTile(location).name.Contains("Ice") == true)
                     {
-                        Debug.Log("icetı");
+                        
                         decrease = 90;
                     }
                 }
@@ -62,6 +66,24 @@ public class positionControl : MonoBehaviour
         }
         coinText.text = "" + coin;
     }
+    void star()
+    {
+        if (coin > firstStarLimit)
+        {
+            
+            stars[0].SetActive(true);
+        }
+        if (coin > secondStarLimit)
+        {
+        
+            stars[1].SetActive(true);
+        }
+        if (coin > thirdStarLimit)
+        {
+            
+            stars[2].SetActive(true);
+        }
+    }
 
     public void path1()
     {
@@ -70,14 +92,14 @@ public class positionControl : MonoBehaviour
         
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
-            Debug.Log("boştu");
+            
             GameObject point = Instantiate(whichPoint);
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
             tileScript.points.Add(point);
         }
         else
         {
-            Debug.Log("doluydu1");
+            
             coin += decrease;
         }
         tiles.SetTile(location, tile[0]);
@@ -89,14 +111,14 @@ public class positionControl : MonoBehaviour
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
-            Debug.Log("boştu");
+            
             GameObject point = Instantiate(whichPoint);
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
             tileScript.points.Add(point);
         }
         else
         {
-            Debug.Log("doluydu2");
+            
             coin += decrease;
         }
         tiles.SetTile(location, tile[1]);
@@ -108,14 +130,14 @@ public class positionControl : MonoBehaviour
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
-            Debug.Log("boştu");
+            
             GameObject point = Instantiate(whichPoint);
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
             tileScript.points.Add(point);
         }
         else
         {
-            Debug.Log("doluydu3");
+            
             coin += decrease;
         }
         tiles.SetTile(location, tile[2]);
@@ -127,14 +149,14 @@ public class positionControl : MonoBehaviour
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
-            Debug.Log("boştu");
+            
             GameObject point = Instantiate(whichPoint);
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
             tileScript.points.Add(point);
         }
         else
         {
-            Debug.Log("doluydu4");
+            
             coin += decrease;
         }
         tiles.SetTile(location, tile[3]);
@@ -146,14 +168,14 @@ public class positionControl : MonoBehaviour
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
-            Debug.Log("boştu");
+            
             GameObject point = Instantiate(whichPoint);
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
             tileScript.points.Add(point);
         }
         else
         {
-            Debug.Log("doluydu5");
+            
             coin += decrease;
         }
         tiles.SetTile(location, tile[4]);
@@ -165,14 +187,14 @@ public class positionControl : MonoBehaviour
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
-            Debug.Log("boştu");
+            
             GameObject point = Instantiate(whichPoint);
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
             tileScript.points.Add(point);
         }
         else
         {
-            Debug.Log("doluydu6");
+            
             coin += decrease;
         }
         tiles.SetTile(location, tile[5]);
@@ -184,14 +206,14 @@ public class positionControl : MonoBehaviour
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
-            Debug.Log("boştu");
+            
             GameObject point = Instantiate(whichPoint);
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
             tileScript.points.Add(point);
         }
         else
         {
-            Debug.Log("doluydu7");
+            
             coin += decrease;
         }
         tiles.SetTile(location, tile[6]);
@@ -203,14 +225,14 @@ public class positionControl : MonoBehaviour
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
-            Debug.Log("boştu");
+            
             GameObject point = Instantiate(whichPoint);
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
             tileScript.points.Add(point);
         }
         else
         {
-            Debug.Log("doluydu8");
+            
             coin += decrease;
         }
         tiles.SetTile(location, tile[7]);
@@ -223,14 +245,14 @@ public class positionControl : MonoBehaviour
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
-            Debug.Log("boştu");
+            
             GameObject point = Instantiate(whichPoint);
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
             tileScript.points.Add(point);
         }
         else
         {
-            Debug.Log("doluydu9");
+            
             coin += decrease;
         }
         tiles.SetTile(location, tile[8]);
@@ -243,14 +265,14 @@ public class positionControl : MonoBehaviour
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
-            Debug.Log("boştu");
+            
             GameObject point = Instantiate(whichPoint);
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
             tileScript.points.Add(point);
         }
         else
         {
-            Debug.Log("doluydu10");
+            
             coin += decrease;
         }
         tiles.SetTile(location, tile[9]);
@@ -262,14 +284,14 @@ public class positionControl : MonoBehaviour
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
-            Debug.Log("boştu");
+            
             GameObject point = Instantiate(whichPoint);
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
             tileScript.points.Add(point);
         }
         else
         {
-            Debug.Log("doluydu10");
+            
             coin += decrease;
         }
         tiles.SetTile(location, tile[10]);
@@ -281,14 +303,14 @@ public class positionControl : MonoBehaviour
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
-            Debug.Log("boştu");
+            
             GameObject point = Instantiate(whichPoint);
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
             tileScript.points.Add(point);
         }
         else
         {
-            Debug.Log("doluydu10");
+            
             coin += decrease;
         }
         tiles.SetTile(location, tile[11]);
@@ -300,14 +322,14 @@ public class positionControl : MonoBehaviour
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
-            Debug.Log("boştu");
+            
             GameObject point = Instantiate(whichPoint);
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
             tileScript.points.Add(point);
         }
         else
         {
-            Debug.Log("doluydu10");
+            
             coin += decrease;
         }
         tiles.SetTile(location, tile[12]);
@@ -320,14 +342,14 @@ public class positionControl : MonoBehaviour
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
-            Debug.Log("boştu");
+            
             GameObject point = Instantiate(whichPoint);
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
             tileScript.points.Add(point);
         }
         else
         {
-            Debug.Log("doluydu10");
+            
             coin += decrease;
         }
         tiles.SetTile(location, tile[13]);
@@ -340,14 +362,14 @@ public class positionControl : MonoBehaviour
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
-            Debug.Log("boştu");
+            
             GameObject point = Instantiate(whichPoint);
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
             tileScript.points.Add(point);
         }
         else
         {
-            Debug.Log("doluydu10");
+            
             coin += decrease;
         }
         tiles.SetTile(location, tile[14]);
@@ -359,14 +381,14 @@ public class positionControl : MonoBehaviour
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
-            Debug.Log("boştu");
+            
             GameObject point = Instantiate(whichPoint);
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
             tileScript.points.Add(point);
         }
         else
         {
-            Debug.Log("doluydu10");
+            
             coin += decrease;
         }
         tiles.SetTile(location, tile[15]);
@@ -378,14 +400,14 @@ public class positionControl : MonoBehaviour
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
-            Debug.Log("boştu");
+            
             GameObject point = Instantiate(whichPoint);
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
             tileScript.points.Add(point);
         }
         else
         {
-            Debug.Log("doluydu10");
+            
             coin += decrease;
         }
         tiles.SetTile(location, tile[16]);
@@ -397,14 +419,14 @@ public class positionControl : MonoBehaviour
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
-            Debug.Log("boştu");
+            
             GameObject point = Instantiate(whichPoint);
             point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
             tileScript.points.Add(point);
         }
         else
         {
-            Debug.Log("doluydu10");
+            
             coin += decrease;
         }
         tiles.SetTile(location, tile[17]);

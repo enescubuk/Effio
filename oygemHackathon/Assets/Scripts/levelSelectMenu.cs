@@ -12,9 +12,7 @@ public class levelSelectMenu : MonoBehaviour
     private int totalPage = 0;
     private int page = 0;
     private int pageItem = 9;
-    public GameObject nextButton;
-    public GameObject backButton;
-    
+
     void OnEnable()
     {
         LevelButtons = GetComponentsInChildren<levelButton>();
@@ -65,7 +63,6 @@ public class levelSelectMenu : MonoBehaviour
 
     private void CheckButton()
     {
-        backButton.SetActive(page>0);
-        nextButton.SetActive(page<totalPage);
+        
     }
 }

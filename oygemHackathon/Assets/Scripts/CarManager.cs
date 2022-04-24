@@ -7,10 +7,10 @@ public class CarManager : MonoBehaviour
 {
     public tilesetController tileScript;
     public float speed;
-    
+    public bool locationControl;
     public bool start = false;
 
-
+    public GameObject nullGameobject;
     public List<GameObject> points;
 
     public int i; 
@@ -29,28 +29,52 @@ public class CarManager : MonoBehaviour
     void Update()
     {
 
-        
-        for (int i = 0; i < tileScript.points.Count; i++)
+        if (tileScript.points.Count!=0)
         {
-            if (Vector2.Distance(gameObject.transform.position, tileScript.points[i].transform.position) <= 0.2f)
+            for (int i = 0; i < tileScript.points.Count; i++)
             {
-                tileScript.points.Remove(tileScript.points[i]);
-                i++;
-            }
+            
+                if (Vector2.Distance(gameObject.transform.position, tileScript.points[i].transform.position) <= 0.2f)
+                {
+                    tileScript.points.Remove(tileScript.points[i]);
+                    i++;
+                }
 
+            }
         }
+       
         if (Input.GetKeyDown(KeyCode.A))
         {
+            tileScript.points.Add(nullGameobject);
             start = true;
+            
+            
         }
         if (start)
         {
-
-            transform.position = Vector2.MoveTowards(gameObject.transform.position, tileScript.points[i].transform.position, speed * Time.deltaTime);
-
             
+            if (tileScript.points.Count == 0)
+            {
+                locationControl = true;
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(gameObject.transform.position, tileScript.points[0].transform.position, speed * Time.deltaTime);   
+            }
+            
+               // transform.position = Vector2.MoveTowards(gameObject.transform.position, tileScript.points[0].transform.position, speed * Time.deltaTime);
+                
+
         }
 
+    }
+    void speedChange()
+    {
+        Vector3Int carGrid = tileScript.tiles.WorldToCell(transform.position);
+        if (tileScript.tiles.GetTile(carGrid).name.Contains(""))
+        {
+            Debug.Log("baba");
+        }
     }
     Transform GetClosestPoint(List<GameObject> enemies)
     {

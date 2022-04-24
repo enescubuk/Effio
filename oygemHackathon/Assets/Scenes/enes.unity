@@ -2573,6 +2573,7 @@ MonoBehaviour:
   tileScript: {fileID: 519420030}
   speed: 1
   start: 0
+  nullGameobject: {fileID: 726810182}
   points: []
   i: 0
 --- !u!1 &1174737453

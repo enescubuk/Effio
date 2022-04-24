@@ -46,7 +46,7 @@ public class CarManager : MonoBehaviour
                     
                     location = tiles.WorldToCell(tileScript.points[i].transform.position);
                     carLocation = tiles.WorldToCell(transform.position);
-                    
+                    speedChange();
                     if (carLocation == location)
                     {
                         a = tiles.GetTile(location).name;
@@ -54,7 +54,7 @@ public class CarManager : MonoBehaviour
 
                         if (a.Contains("4") && a != "bosyol_4")
                         {
-                           
+                        
                             if (GetComponent<SpriteRenderer>().sprite == sprites[0])
                             {
                                 GetComponent<SpriteRenderer>().sprite = sprites[3];
@@ -144,9 +144,20 @@ public class CarManager : MonoBehaviour
     void speedChange()
     {
         Vector3Int carGrid = tileScript.tiles.WorldToCell(transform.position);
-        if (tileScript.tiles.GetTile(carGrid).name.Contains(""))
+        if (tileScript.tiles.GetTile(carGrid).name.Contains("Asp"))
         {
-            Debug.Log("baba");
+            //Debug.Log("asphalt");
+            speed = speed - (speed/3);
+        }
+        if (tileScript.tiles.GetTile(carGrid).name.Contains("Dirt"))
+        {
+            Debug.Log("patika");
+            speed = speed - (speed/2);
+        }
+        if (tileScript.tiles.GetTile(carGrid).name.Contains("Ice"))
+        {
+            Debug.Log("buz");
+            speed = speed - (2*speed/3);
         }
     }
     Transform GetClosestPoint(List<GameObject> enemies)

@@ -410,4 +410,10 @@ public class positionControl : MonoBehaviour
         tiles.SetTile(location, tile[17]);
         isOpen = false;
     }
+
+    public void closeButton()
+    {
+        panel.SetActive(false);
+        isOpen = false;
+    }
 }

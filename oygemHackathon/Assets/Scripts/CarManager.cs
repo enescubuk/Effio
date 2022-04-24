@@ -144,17 +144,17 @@ public class CarManager : MonoBehaviour
         if (tileScript.tiles.GetTile(carGrid).name.Contains("Asp"))
         {
             //Debug.Log("asphalt");
-            speed = 1 - (1/3);
+            speed = speed - (1/3);
         }
         if (tileScript.tiles.GetTile(carGrid).name.Contains("Dirt"))
         {
             Debug.Log("patika");
-            speed = 1 - (1/2);
+            speed = speed - (1/2);
         }
         if (tileScript.tiles.GetTile(carGrid).name.Contains("Ice"))
         {
             Debug.Log("buz");
-            speed = 1 + (2*1/3);
+            speed = speed + (2*1/3);
         }
     }
     Transform GetClosestPoint(List<GameObject> enemies)

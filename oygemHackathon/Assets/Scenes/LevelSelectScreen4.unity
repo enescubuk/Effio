@@ -3291,6 +3291,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 961319023889680882, guid: 9ffe33bf42aaf854399d37bc0e460738, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 523927163}
+    - target: {fileID: 961319023889680882, guid: 9ffe33bf42aaf854399d37bc0e460738, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 961319023889680882, guid: 9ffe33bf42aaf854399d37bc0e460738, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2162248176011995435, guid: 9ffe33bf42aaf854399d37bc0e460738, type: 3}
       propertyPath: m_Name
       value: kure_0
@@ -3345,7 +3357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5695562939865872141, guid: 9ffe33bf42aaf854399d37bc0e460738, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 77.5
+      value: 82.6
       objectReference: {fileID: 0}
     - target: {fileID: 7567397585112413168, guid: 9ffe33bf42aaf854399d37bc0e460738, type: 3}
       propertyPath: m_Text

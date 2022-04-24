@@ -1307,6 +1307,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 961319023889680882, guid: 9ffe33bf42aaf854399d37bc0e460738, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 523927163}
+    - target: {fileID: 961319023889680882, guid: 9ffe33bf42aaf854399d37bc0e460738, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 961319023889680882, guid: 9ffe33bf42aaf854399d37bc0e460738, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2162248176011995435, guid: 9ffe33bf42aaf854399d37bc0e460738, type: 3}
       propertyPath: m_Name
       value: kure_0
@@ -1357,11 +1369,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5695562939865872141, guid: 9ffe33bf42aaf854399d37bc0e460738, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 6.9
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 5695562939865872141, guid: 9ffe33bf42aaf854399d37bc0e460738, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10.6
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 7567397585112413168, guid: 9ffe33bf42aaf854399d37bc0e460738, type: 3}
       propertyPath: m_Text
@@ -3369,7 +3381,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1897012793 stripped
 MonoBehaviour:

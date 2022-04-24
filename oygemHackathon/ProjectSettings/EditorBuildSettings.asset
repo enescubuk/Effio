@@ -5,33 +5,54 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/startScene.unity
     guid: 0df397e96a9315440a88b2fa16eae79c
   - enabled: 1
+    path: Assets/Scenes/LevelSelectScreen.unity
+    guid: 0e9e54589352867438ef39460d03eb57
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 39c8de4b911f64044816be99208fbe9b
+  - enabled: 1
+    path: Assets/Scenes/LevelSelectScreen2.unity
+    guid: 071f57ffd9fb53540b3686d30222eeb2
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 11ea50c83471ec34787eef6fda01406a
   - enabled: 1
+    path: Assets/Scenes/LevelSelectScreen3.unity
+    guid: 7abed79f26bebe34eb248c48752c8ecb
+  - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: 42683a52c92093d459e1de939f0170f2
+  - enabled: 1
+    path: Assets/Scenes/LevelSelectScreen4.unity
+    guid: 3401c3c521028f14caf7373e6723e465
   - enabled: 1
     path: Assets/Scenes/Level4.unity
     guid: ca2d03eed53e4444ea9f2fa406d6f3e5
   - enabled: 1
+    path: Assets/Scenes/LevelSelectScreen5.unity
+    guid: 9b9e4ea59ca32ae47855fd6717a4e512
+  - enabled: 1
     path: Assets/Scenes/Level5.unity
     guid: ee0479f95f5f98e46ba41bce780e4ab1
+  - enabled: 1
+    path: Assets/Scenes/LevelSelectScreen6.unity
+    guid: a165152df3970464eb6255338cadf22b
   - enabled: 1
     path: Assets/Scenes/Level6.unity
     guid: ce7b30b1dfd87c5449f15624eccaf051
   - enabled: 1
+    path: Assets/Scenes/LevelselectScreen7.unity
+    guid: 2e99fdec6a66f3d47858c5820f8e08cc
+  - enabled: 1
     path: Assets/Scenes/Level7.unity
     guid: effda1aee1485844293fe15f62c2ceb2
+  - enabled: 1
+    path: Assets/Scenes/LevelSelectScreen8.unity
+    guid: 618ef0444ce2d8646a56434f4f46a18d
   - enabled: 1
     path: Assets/Scenes/Level8.unity
     guid: 69aa758f05c3c804f9edd7d390011c2d

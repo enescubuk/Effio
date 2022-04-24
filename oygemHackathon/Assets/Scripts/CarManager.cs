@@ -13,8 +13,15 @@ public class CarManager : MonoBehaviour
     public GameObject nullGameobject;
     public List<GameObject> points;
 
-    public int i; 
-    
+    public int i;
+    public Vector3Int carLocation;
+
+    public Tilemap tiles;
+    public Tile[] tile;
+    public Vector3Int location;
+
+    public Sprite[] sprites;
+    private string a;
 
 
 
@@ -36,6 +43,72 @@ public class CarManager : MonoBehaviour
             
                 if (Vector2.Distance(gameObject.transform.position, tileScript.points[i].transform.position) <= 0.2f)
                 {
+                    
+                    location = tiles.WorldToCell(tileScript.points[i].transform.position);
+                    carLocation = tiles.WorldToCell(transform.position);
+                    
+                    if (carLocation == location)
+                    {
+                        a = tiles.GetTile(location).name;
+                        Debug.Log(a);
+
+                        if (a.Contains("4") && a != "bosyol_4")
+                        {
+                           
+                            if (GetComponent<SpriteRenderer>().sprite == sprites[0])
+                            {
+                                GetComponent<SpriteRenderer>().sprite = sprites[3];
+                                Debug.Log(69);
+                            }
+                            if (GetComponent<SpriteRenderer>().sprite == sprites[1])
+                            {
+                                GetComponent<SpriteRenderer>().sprite = sprites[2];
+                            }
+
+                        }
+                        if (a.Contains("3") && a != "bosyol_4")
+                        {
+
+                            if (GetComponent<SpriteRenderer>().sprite == sprites[2])
+                            {
+                                GetComponent<SpriteRenderer>().sprite = sprites[1];
+                                Debug.Log(69);
+                            }
+                            if (GetComponent<SpriteRenderer>().sprite == sprites[3])
+                            {
+                                GetComponent<SpriteRenderer>().sprite = sprites[0];
+                            }
+
+                        }
+                        if (a.Contains("5") && a != "bosyol_4")
+                        {
+
+                            if (GetComponent<SpriteRenderer>().sprite == sprites[3])
+                            {
+                                GetComponent<SpriteRenderer>().sprite = sprites[2];
+                                Debug.Log(69);
+                            }
+                            if (GetComponent<SpriteRenderer>().sprite == sprites[0])
+                            {
+                                GetComponent<SpriteRenderer>().sprite = sprites[1];
+                            }
+
+                        }
+                        if (a.Contains("6") && a != "bosyol_4")
+                        {
+
+                            if (GetComponent<SpriteRenderer>().sprite == sprites[2])
+                            {
+                                GetComponent<SpriteRenderer>().sprite = sprites[3];
+                                Debug.Log(69);
+                            }
+                            if (GetComponent<SpriteRenderer>().sprite == sprites[1])
+                            {
+                                GetComponent<SpriteRenderer>().sprite = sprites[0];
+                            }
+
+                        }
+                    }
                     tileScript.points.Remove(tileScript.points[i]);
                     i++;
                 }

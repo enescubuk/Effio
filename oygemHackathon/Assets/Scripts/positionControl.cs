@@ -30,7 +30,7 @@ public class positionControl : MonoBehaviour
             location = tiles.WorldToCell(panel.transform.position);
             panel.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, 0);
 
-            if (tiles.GetTile(location) == null)
+            if (tiles.GetTile(location) == null || tiles.GetTile(location).name.Contains("coguburda_2") || tiles.GetTile(location).name.Contains("tas"))
             {
                 Debug.Log(31);
             }

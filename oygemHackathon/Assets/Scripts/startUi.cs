@@ -28,7 +28,7 @@ public class startUi : MonoBehaviour
         {
             if (CarManager.locationControl==true)
             {
-                SceneManager.LoadScene("Level1");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             StartCoroutine(asd());
         }

@@ -62,7 +62,7 @@ public class positionControl : MonoBehaviour
         coin -= 50;
         panel.SetActive(false);
         
-        if (tiles.GetTile(location).name == "bosyol_4")
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
             Debug.Log("boştu");
             GameObject point = Instantiate(whichPoint);
@@ -81,7 +81,7 @@ public class positionControl : MonoBehaviour
     {
         coin -= 50;
         panel.SetActive(false);
-        if (tiles.GetTile(location).name == "bosyol_4")
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
             Debug.Log("boştu");
             GameObject point = Instantiate(whichPoint);
@@ -100,7 +100,8 @@ public class positionControl : MonoBehaviour
     {
         coin -= 50;
         panel.SetActive(false);
-        if (tiles.GetTile(location).name == "bosyol_4")
+        
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
             Debug.Log("boştu");
             GameObject point = Instantiate(whichPoint);
@@ -119,7 +120,7 @@ public class positionControl : MonoBehaviour
     {
         coin -= 90;
         panel.SetActive(false);
-        if (tiles.GetTile(location).name == "bosyol_4")
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
             Debug.Log("boştu");
             GameObject point = Instantiate(whichPoint);
@@ -138,7 +139,7 @@ public class positionControl : MonoBehaviour
     {
         coin -= 90;
         panel.SetActive(false);
-        if (tiles.GetTile(location).name == "bosyol_4")
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
             Debug.Log("boştu");
             GameObject point = Instantiate(whichPoint);
@@ -157,7 +158,7 @@ public class positionControl : MonoBehaviour
     {
         coin -= 90;
         panel.SetActive(false);
-        if (tiles.GetTile(location).name == "bosyol_4")
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
             Debug.Log("boştu");
             GameObject point = Instantiate(whichPoint);
@@ -176,7 +177,7 @@ public class positionControl : MonoBehaviour
     {
         coin -= 30;
         panel.SetActive(false);
-        if (tiles.GetTile(location).name == "bosyol_4")
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
             Debug.Log("boştu");
             GameObject point = Instantiate(whichPoint);
@@ -195,7 +196,7 @@ public class positionControl : MonoBehaviour
     {
         coin -= 30;
         panel.SetActive(false);
-        if (tiles.GetTile(location).name == "bosyol_4")
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
             Debug.Log("boştu");
             GameObject point = Instantiate(whichPoint);
@@ -215,7 +216,7 @@ public class positionControl : MonoBehaviour
     {
         coin -= 30;
         panel.SetActive(false);
-        if (tiles.GetTile(location).name == "bosyol_4")
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
             Debug.Log("boştu");
             GameObject point = Instantiate(whichPoint);
@@ -235,7 +236,7 @@ public class positionControl : MonoBehaviour
     {
         coin -= 120;
         panel.SetActive(false);
-        if (tiles.GetTile(location).name == "bosyol_4")
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
             Debug.Log("boştu");
             GameObject point = Instantiate(whichPoint);

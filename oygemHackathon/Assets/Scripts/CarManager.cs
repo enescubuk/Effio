@@ -35,7 +35,7 @@ public class CarManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         if (tileScript.points.Count!=0)
         {
             for (int i = 0; i < tileScript.points.Count; i++)
@@ -118,10 +118,7 @@ public class CarManager : MonoBehaviour
        
         if (Input.GetKeyDown(KeyCode.A))
         {
-            tileScript.points.Add(nullGameobject);
             start = true;
-            
-            
         }
         if (start)
         {

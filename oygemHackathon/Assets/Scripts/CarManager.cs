@@ -28,8 +28,9 @@ public class CarManager : MonoBehaviour
 
     void Start()
     {
-        
+        nullGameobject = GameObject.Find("GameObject");
         tileScript = GameObject.Find("Main Camera").GetComponent<tilesetController>();
+        
         //Vector2.Lerp(gameObject.transform.position, tileScript.points[0].transform.position, speed);
     }
     
@@ -136,6 +137,9 @@ public class CarManager : MonoBehaviour
        
         if (Input.GetKeyDown(KeyCode.A))
         {
+            tileScript.points.Add(nullGameobject);
+            nullGameobject.transform.position = GameObject.Find("bayraklar_0").transform.position;
+            
             start = true;
         }
         if (start)

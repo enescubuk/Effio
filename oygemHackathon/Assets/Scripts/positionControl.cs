@@ -87,7 +87,7 @@ public class positionControl : MonoBehaviour
 
     public void path1()
     {
-        coin -= 50;
+        coin -= 30;
         panel.SetActive(false);
         
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
@@ -107,7 +107,7 @@ public class positionControl : MonoBehaviour
     }
     public void path2()
     {
-        coin -= 50;
+        coin -= 30;
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
@@ -126,7 +126,7 @@ public class positionControl : MonoBehaviour
     }
     public void path3()
     {
-        coin -= 50;
+        coin -= 30;
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
@@ -145,7 +145,7 @@ public class positionControl : MonoBehaviour
     }
     public void path4()
     {
-        coin -= 90;
+        coin -= 30;
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
@@ -164,7 +164,7 @@ public class positionControl : MonoBehaviour
     }
     public void path5()
     {
-        coin -= 90;
+        coin -= 30;
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
@@ -183,7 +183,7 @@ public class positionControl : MonoBehaviour
     }
     public void path6()
     {
-        coin -= 90;
+        coin -= 30;
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
@@ -202,7 +202,7 @@ public class positionControl : MonoBehaviour
     }
     public void path7()
     {
-        coin -= 30;
+        coin -= 50;
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
@@ -221,7 +221,7 @@ public class positionControl : MonoBehaviour
     }
     public void path8()
     {
-        coin -= 30;
+        coin -= 50;
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
@@ -241,7 +241,7 @@ public class positionControl : MonoBehaviour
     }
     public void path9()
     {
-        coin -= 30;
+        coin -= 50;
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
@@ -261,7 +261,7 @@ public class positionControl : MonoBehaviour
     }
     public void path10()
     {
-        coin -= 120;
+        coin -= 50;
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
@@ -280,7 +280,7 @@ public class positionControl : MonoBehaviour
     }
     public void path11()
     {
-        coin -= 120;
+        coin -= 50;
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
@@ -299,7 +299,7 @@ public class positionControl : MonoBehaviour
     }
     public void path12()
     {
-        coin -= 120;
+        coin -= 50;
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
@@ -318,7 +318,7 @@ public class positionControl : MonoBehaviour
     }
     public void path13()
     {
-        coin -= 120;
+        coin -= 90;
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
@@ -338,7 +338,7 @@ public class positionControl : MonoBehaviour
 
     public void path14()
     {
-        coin -= 120;
+        coin -= 90;
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
@@ -358,7 +358,7 @@ public class positionControl : MonoBehaviour
 
     public void path15()
     {
-        coin -= 120;
+        coin -= 90;
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
@@ -377,7 +377,7 @@ public class positionControl : MonoBehaviour
     }
     public void path16()
     {
-        coin -= 120;
+        coin -= 90;
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
@@ -396,7 +396,7 @@ public class positionControl : MonoBehaviour
     }
     public void path17()
     {
-        coin -= 120;
+        coin -= 90;
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {
@@ -415,7 +415,7 @@ public class positionControl : MonoBehaviour
     }
     public void path18()
     {
-        coin -= 120;
+        coin -= 90;
         panel.SetActive(false);
         if (tiles.GetTile(location).name.Contains("bosyol_4"))
         {

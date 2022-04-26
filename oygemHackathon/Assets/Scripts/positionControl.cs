@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class positionControl : MonoBehaviour
 {
@@ -18,11 +19,12 @@ public class positionControl : MonoBehaviour
     int decrease;
     bool isChange;
 
-    public float firstStarLimit,secondStarLimit,thirdStarLimit;
-    public GameObject[] stars;
-    void Start()
-    {
 
+
+
+    private void Start()
+    {
+        
     }
 
     void Update()
@@ -66,24 +68,7 @@ public class positionControl : MonoBehaviour
         coinText.text = "" + coin;
     }
     
-    void star()
-    {
-        if (coin > firstStarLimit)
-        {
-            
-            stars[0].SetActive(true);
-        }
-        if (coin > secondStarLimit)
-        {
-        
-            stars[1].SetActive(true);
-        }
-        if (coin > thirdStarLimit)
-        {
-            
-            stars[2].SetActive(true);
-        }
-    }
+    
 
     public void path1()
     {

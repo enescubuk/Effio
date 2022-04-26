@@ -44,10 +44,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location: {x: 0, y: 0, z: 0}
-  location2: {x: 0, y: 0, z: 0}
   carLocation: {x: 0, y: 0, z: 0}
   startFlag: {fileID: 0}
   exitFlag: {fileID: 0}
   tiles: {fileID: 0}
   car: {fileID: 0}
   CarManager: {fileID: 0}
+  positionScript: {fileID: 0}
+  firstStarLimit: -100
+  secondStarLimit: -50
+  thirdStarLimit: 0
+  stars:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

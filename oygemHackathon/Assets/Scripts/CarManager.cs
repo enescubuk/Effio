@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class CarManager : MonoBehaviour
 {
@@ -37,6 +38,10 @@ public class CarManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
         if (GetComponent<SpriteRenderer>().sprite == sprites[0])
         {
             smoke.transform.localPosition = new Vector3(0.16f, 0.14f, 0);
@@ -168,19 +173,28 @@ public class CarManager : MonoBehaviour
         {
             float newSpeed = speed * 60;
             newSpeed = newSpeed - 20;
-            speed = newSpeed / 60;
+            if (newSpeed >= 0)
+            {
+                speed = newSpeed / 60;
+            }
         }
         if (tileScript.tiles.GetTile(carGrid).name.Contains("Dirt"))
         {
             float newSpeed = speed * 60;
             newSpeed = newSpeed - 30;
-            speed = newSpeed / 60;
+            if (newSpeed >= 0)
+            {
+                speed = newSpeed / 60;
+            }
         }
         if (tileScript.tiles.GetTile(carGrid).name.Contains("Ice"))
         {
             float newSpeed = speed * 60;
             newSpeed = newSpeed + 30;
-            speed = newSpeed / 60;
+            if (newSpeed >= 0)
+            {
+                speed = newSpeed / 60;
+            }
         }
     }
     Transform GetClosestPoint(List<GameObject> enemies)

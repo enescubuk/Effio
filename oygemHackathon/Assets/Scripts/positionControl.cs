@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class positionControl : MonoBehaviour
 {
+    public Image secmeEfekti;
     public Text coinText;
     public int coin = 120;
     public GameObject panel;
@@ -16,9 +17,9 @@ public class positionControl : MonoBehaviour
     public bool isOpen;
     public GameObject whichPoint;
     public tilesetController tileScript;
+    
     int decrease;
     bool isChange;
-
 
 
 
@@ -29,12 +30,13 @@ public class positionControl : MonoBehaviour
 
     void Update()
     {
+        
         if (Input.GetMouseButtonDown(0) && isOpen == false)
         {
             panel.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             location = tiles.WorldToCell(panel.transform.position);
             panel.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, 0);
-
+            secmeEfekti.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, 0);
             if (tiles.GetTile(location) == null || tiles.GetTile(location).name.Contains("coguburda_2") || tiles.GetTile(location).name.Contains("tas"))
             {
                 Debug.Log(31);
@@ -66,6 +68,7 @@ public class positionControl : MonoBehaviour
             
         }
         coinText.text = "" + coin;
+        secmeEfekti.enabled = panel.active;
     }
     
     

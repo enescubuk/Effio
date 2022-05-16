@@ -17,20 +17,56 @@ public class positionControl : MonoBehaviour
     public bool isOpen;
     public GameObject whichPoint;
     public tilesetController tileScript;
-    
+    public Vector3Int pointInt;
+
     int decrease;
     bool isChange;
 
 
 
-    private void Start()
+    void ControlRoad()
     {
-        
+
+        for (int i = 0; i < tileScript.points.Count; i++)
+        {
+            pointInt = tiles.WorldToCell(new Vector3(tileScript.points[i].transform.position.x, tileScript.points[i].transform.position.y, 0));
+            if (tiles.GetTile(pointInt).name.Contains("Dirt"))
+            {
+                if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Dirt") || tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)) == null || tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Dirt") || tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)) == null)
+                {
+                    tiles.SetTile(pointInt, tile[1]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)).name.Contains("Dirt") || tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)) == null || tiles.GetTile(new Vector3Int(pointInt.x + +1, pointInt.y, 0)).name.Contains("Dirt") || tiles.GetTile(new Vector3Int(pointInt.x + +1, pointInt.y, 0)) == null)
+                {
+                    tiles.SetTile(pointInt, tile[0]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x + -1, pointInt.y, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x + -1, pointInt.y, 0)) != null)
+                {
+                    tiles.SetTile(pointInt, tile[2]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)) != null)
+                {
+                    tiles.SetTile(pointInt, tile[3]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)) != null)
+                {
+                    tiles.SetTile(pointInt, tile[4]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)) != null)
+                {
+                    tiles.SetTile(pointInt, tile[5]);
+                }
+            }
+
+            Debug.Log(pointInt);
+
+        }
+
     }
 
     void Update()
     {
-        
+        ControlRoad();
         if (Input.GetMouseButtonDown(0) && isOpen == false)
         {
             panel.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -99,6 +135,9 @@ public class positionControl : MonoBehaviour
             coin += decrease;
         }
         tiles.SetTile(location, tile[0]);
+
+        ControlRoad();
+
         isOpen = false;
     }
     public void path2()

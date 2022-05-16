@@ -8,7 +8,7 @@ public class cloudsMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = Random.Range(0.65f,1f);
+        speed = Random.Range(0.65f,1.15f);
     }
 
     // Update is called once per frame

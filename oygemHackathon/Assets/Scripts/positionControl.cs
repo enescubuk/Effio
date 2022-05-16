@@ -35,7 +35,15 @@ public class positionControl : MonoBehaviour
         {
             panel.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             location = tiles.WorldToCell(panel.transform.position);
-            panel.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, 0);
+            Debug.Log(new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y, 0));
+            if ( tiles.CellToWorld(location).y < 0.5f)
+            {
+                panel.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, 0);
+            }
+            else
+            {
+                panel.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y - 3.5f, 0);
+            }
             secmeEfekti.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, 0);
             if (tiles.GetTile(location) == null || tiles.GetTile(location).name.Contains("coguburda_2") || tiles.GetTile(location).name.Contains("tas"))
             {
@@ -68,7 +76,7 @@ public class positionControl : MonoBehaviour
             
         }
         coinText.text = "" + coin;
-        secmeEfekti.enabled = panel.active;
+        secmeEfekti.enabled = panel.activeSelf;
     }
     
     

@@ -21,7 +21,7 @@ public class cloudsController : MonoBehaviour
             nextActionTime += period;
              // execute block of code here
             Vector3 spawnPos = new Vector3(Random.Range(15f,20f),Random.Range(-6f,6f),0);
-            Instantiate(clouds[Random.Range(0,clouds.Length)],spawnPos,Quaternion.identity);
+            Instantiate(clouds[Random.Range(0,clouds.Length)],spawnPos,Quaternion.identity,GameObject.Find("bulutlar").transform);
             
         }
     }

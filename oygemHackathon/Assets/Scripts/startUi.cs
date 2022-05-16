@@ -32,7 +32,7 @@ public class startUi : MonoBehaviour
     }
     void Start()
     {
-       
+        
         
         
     }
@@ -41,13 +41,11 @@ public class startUi : MonoBehaviour
     {
         location = tiles.WorldToCell(startFlag.transform.position);
         carLocation = tiles.WorldToCell(car.transform.position);
-        Debug.Log(location);
-        Debug.Log(carLocation);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //}
 
         if (carLocation == location || carLocation== tiles.WorldToCell(GameObject.Find("bayraklar_0").transform.position))
         {
@@ -57,29 +55,33 @@ public class startUi : MonoBehaviour
             }
             else
             {
-                if (positionScript.coin > firstStarLimit)
-                {
-
-                    stars[0].SetActive(true);
-                }
-                if (positionScript.coin > secondStarLimit)
-                {
-
-                    stars[1].SetActive(true);
-                }
-                if (positionScript.coin > thirdStarLimit)
-                {
-
-                    stars[2].SetActive(true);
-                }
+                //getStar();
             }
             
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                getStar();
             }
-                     
+            
         }
 
+    }
+
+    public void getStar()
+    {
+        Debug.Log("yildiz");
+        if (positionScript.coin > firstStarLimit)
+        {
+            stars[0].SetActive(true);
+        }
+        if (positionScript.coin > secondStarLimit)
+        {
+            stars[1].SetActive(true);
+        }
+        if (positionScript.coin > thirdStarLimit)
+        {
+            stars[2].SetActive(true);
+        }
     }
 }

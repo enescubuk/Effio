@@ -32,30 +32,35 @@ public class positionControl : MonoBehaviour
             pointInt = tiles.WorldToCell(new Vector3(tileScript.points[i].transform.position.x, tileScript.points[i].transform.position.y, 0));
             if (tiles.GetTile(pointInt).name.Contains("Dirt"))
             {
-                if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Dirt") || tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)) == null || tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Dirt") || tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)) == null)
-                {
-                    tiles.SetTile(pointInt, tile[1]);
-                }
-                if (tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)).name.Contains("Dirt") || tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)) == null || tiles.GetTile(new Vector3Int(pointInt.x + +1, pointInt.y, 0)).name.Contains("Dirt") || tiles.GetTile(new Vector3Int(pointInt.x + +1, pointInt.y, 0)) == null)
-                {
-                    tiles.SetTile(pointInt, tile[0]);
-                }
-                if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x + -1, pointInt.y, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x + -1, pointInt.y, 0)) != null)
-                {
-                    tiles.SetTile(pointInt, tile[2]);
-                }
-                if (tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)) != null)
-                {
-                    tiles.SetTile(pointInt, tile[3]);
-                }
-                if (tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)) != null)
-                {
-                    tiles.SetTile(pointInt, tile[4]);
-                }
-                if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)) != null)
-                {
-                    tiles.SetTile(pointInt, tile[5]);
-                }
+                
+                    if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Dirt") || tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Dirt"))
+                    {
+                        tiles.SetTile(pointInt, tile[1]);
+                    }
+                    if (tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)).name.Contains("Dirt") || tiles.GetTile(new Vector3Int(pointInt.x + +1, pointInt.y, 0)).name.Contains("Dirt"))
+                    {
+                        tiles.SetTile(pointInt, tile[0]);
+                    }
+                    if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x + -1, pointInt.y, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x + -1, pointInt.y, 0)) != null)
+                    {
+                        tiles.SetTile(pointInt, tile[2]);
+                    }
+                    if (tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)) != null)
+                    {
+                        tiles.SetTile(pointInt, tile[3]);
+                    }
+                    if (tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)) != null)
+                    {
+                        tiles.SetTile(pointInt, tile[4]);
+                    }
+                    if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)) != null)
+                    {
+                        tiles.SetTile(pointInt, tile[5]);
+                    }
+                
+                
+                
+                
             }
 
             Debug.Log(pointInt);

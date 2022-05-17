@@ -210,6 +210,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: red_2
       objectReference: {fileID: 0}
+    - target: {fileID: 642590638510556315, guid: f04d19976e6ed024e8b989e9ab154e11, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5127772121986294271, guid: f04d19976e6ed024e8b989e9ab154e11, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -223,14 +227,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1303713187455175765, guid: 2a3cb5a537f06734897df9214a388fc3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1521871915614528415, guid: 2a3cb5a537f06734897df9214a388fc3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3122451089663056167, guid: 2a3cb5a537f06734897df9214a388fc3, type: 3}
       propertyPath: tiles
       value: 
@@ -335,29 +331,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 8230811961218772107, guid: 2a3cb5a537f06734897df9214a388fc3, type: 3}
+    - target: {fileID: 8960258033308105947, guid: 2a3cb5a537f06734897df9214a388fc3, type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8631778430945965751, guid: 2a3cb5a537f06734897df9214a388fc3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a3cb5a537f06734897df9214a388fc3, type: 3}
---- !u!1 &118646409 stripped
+--- !u!1 &156276980 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8230811961218772107, guid: 2a3cb5a537f06734897df9214a388fc3, type: 3}
-  m_PrefabInstance: {fileID: 118646408}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &118646410 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1521871915614528415, guid: 2a3cb5a537f06734897df9214a388fc3, type: 3}
-  m_PrefabInstance: {fileID: 118646408}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &118646411 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8631778430945965751, guid: 2a3cb5a537f06734897df9214a388fc3, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2956041292098637762, guid: 2a3cb5a537f06734897df9214a388fc3, type: 3}
   m_PrefabInstance: {fileID: 118646408}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &201384451
@@ -588,15 +570,15 @@ PrefabInstance:
     - target: {fileID: 3838679184943130514, guid: e036021c63422904996a2e788a1b8710, type: 3}
       propertyPath: stars.Array.data[0]
       value: 
-      objectReference: {fileID: 118646411}
+      objectReference: {fileID: 1882037380}
     - target: {fileID: 3838679184943130514, guid: e036021c63422904996a2e788a1b8710, type: 3}
       propertyPath: stars.Array.data[1]
       value: 
-      objectReference: {fileID: 118646410}
+      objectReference: {fileID: 1560715195}
     - target: {fileID: 3838679184943130514, guid: e036021c63422904996a2e788a1b8710, type: 3}
       propertyPath: stars.Array.data[2]
       value: 
-      objectReference: {fileID: 118646409}
+      objectReference: {fileID: 156276980}
     - target: {fileID: 3838679184943130515, guid: e036021c63422904996a2e788a1b8710, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1628,6 +1610,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1560715195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6040418257842091224, guid: 2a3cb5a537f06734897df9214a388fc3, type: 3}
+  m_PrefabInstance: {fileID: 118646408}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1744159376
 GameObject:
   m_ObjectHideFlags: 0
@@ -2090,6 +2077,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1882037380 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5196848526407508841, guid: 2a3cb5a537f06734897df9214a388fc3, type: 3}
+  m_PrefabInstance: {fileID: 118646408}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1911079019
 GameObject:
   m_ObjectHideFlags: 0

@@ -369,6 +369,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 561c2fec650740e4988461f2e73c2e74, type: 2}
   - {fileID: 11400000, guid: 17d05619cd69f9a4685972a256c625a4, type: 2}
   - {fileID: 11400000, guid: b810db4a14eb3814abc3eb3c39648c8f, type: 2}
+  - {fileID: 11400000, guid: 4817e2e583916e34a86a543b72c9e611, type: 2}
   location: {x: 0, y: 0, z: 0}
   isOpen: 0
   whichPoint: {fileID: 0}

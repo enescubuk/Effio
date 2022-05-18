@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Dirt_5
+  m_Name: Asphalt_3_Road
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -7595553247438060910, guid: d8ca1a3d6943d7f4fae5d2f3d477bb32, type: 3}
+  m_Sprite: {fileID: -5741741832914501201, guid: bc8d7e013d1ae0e4d8b15c577c1554d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Ice_3
+  m_Name: Finish__RoadisometricMap_2
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -7636509476731001151, guid: 4c4aeff6b18ef544a9f489a7454ed1d8, type: 3}
+  m_Sprite: {fileID: 1855692704781837657, guid: 69126291880dbc64d98f664cdbf00ad3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

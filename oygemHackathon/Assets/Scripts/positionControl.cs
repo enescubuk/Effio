@@ -20,7 +20,7 @@ public class positionControl : MonoBehaviour
     public Vector3Int pointInt;
 
     int decrease;
-    bool isChange;
+   
 
 
 
@@ -30,38 +30,91 @@ public class positionControl : MonoBehaviour
         for (int i = 0; i < tileScript.points.Count; i++)
         {
             pointInt = tiles.WorldToCell(new Vector3(tileScript.points[i].transform.position.x, tileScript.points[i].transform.position.y, 0));
+            if (tiles.GetTile(pointInt).name.Contains("Asphalt"))
+            {
+
+                if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Road") || tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Road"))
+                {
+                    tiles.SetTile(pointInt, tile[7]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)).name.Contains("Road") || tiles.GetTile(new Vector3Int(pointInt.x + +1, pointInt.y, 0)).name.Contains("Road"))
+                {
+                    tiles.SetTile(pointInt, tile[6]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x + -1, pointInt.y, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x + -1, pointInt.y, 0)) != null)
+                {
+                    tiles.SetTile(pointInt, tile[8]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)) != null)
+                {
+                    tiles.SetTile(pointInt, tile[9]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)) != null)
+                {
+                    tiles.SetTile(pointInt, tile[10]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)) != null)
+                {
+                    tiles.SetTile(pointInt, tile[11]);
+                }
+            }
             if (tiles.GetTile(pointInt).name.Contains("Dirt"))
             {
                 
-                    if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Dirt") || tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Dirt"))
-                    {
-                        tiles.SetTile(pointInt, tile[1]);
-                    }
-                    if (tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)).name.Contains("Dirt") || tiles.GetTile(new Vector3Int(pointInt.x + +1, pointInt.y, 0)).name.Contains("Dirt"))
-                    {
-                        tiles.SetTile(pointInt, tile[0]);
-                    }
-                    if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x + -1, pointInt.y, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x + -1, pointInt.y, 0)) != null)
-                    {
-                        tiles.SetTile(pointInt, tile[2]);
-                    }
-                    if (tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)) != null)
-                    {
-                        tiles.SetTile(pointInt, tile[3]);
-                    }
-                    if (tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)) != null)
-                    {
-                        tiles.SetTile(pointInt, tile[4]);
-                    }
-                    if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)).name.Contains("Dirt") && tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)) != null)
-                    {
-                        tiles.SetTile(pointInt, tile[5]);
-                    }
-                
-                
-                
-                
+                if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Road") || tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Road"))
+                {
+                    tiles.SetTile(pointInt, tile[1]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)).name.Contains("Road") || tiles.GetTile(new Vector3Int(pointInt.x + +1, pointInt.y, 0)).name.Contains("Road"))
+                {
+                    tiles.SetTile(pointInt, tile[0]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x + -1, pointInt.y, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x + -1, pointInt.y, 0)) != null)
+                {
+                    tiles.SetTile(pointInt, tile[2]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)) != null)
+                {
+                    tiles.SetTile(pointInt, tile[3]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)) != null)
+                {
+                    tiles.SetTile(pointInt, tile[4]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)) != null)
+                {
+                    tiles.SetTile(pointInt, tile[5]);
+                }
             }
+            if (tiles.GetTile(pointInt).name.Contains("Ice"))
+            {
+
+                if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Road") || tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Road"))
+                {
+                    tiles.SetTile(pointInt, tile[13]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)).name.Contains("Road") || tiles.GetTile(new Vector3Int(pointInt.x + +1, pointInt.y, 0)).name.Contains("Road"))
+                {
+                    tiles.SetTile(pointInt, tile[12]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x + -1, pointInt.y, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x + -1, pointInt.y, 0)) != null)
+                {
+                    tiles.SetTile(pointInt, tile[14]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)) != null)
+                {
+                    tiles.SetTile(pointInt, tile[15]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x + 1, pointInt.y, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y + 1, 0)) != null)
+                {
+                    tiles.SetTile(pointInt, tile[16]);
+                }
+                if (tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x, pointInt.y - 1, 0)) != null && tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)).name.Contains("Road") && tiles.GetTile(new Vector3Int(pointInt.x - 1, pointInt.y, 0)) != null)
+                {
+                    tiles.SetTile(pointInt, tile[17]);
+                }
+            }
+
 
             Debug.Log(pointInt);
 
@@ -76,6 +129,7 @@ public class positionControl : MonoBehaviour
         {
             panel.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             location = tiles.WorldToCell(panel.transform.position);
+            
             Debug.Log(new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y, 0));
             if ( tiles.CellToWorld(location).y < 0.5f)
             {
@@ -86,14 +140,32 @@ public class positionControl : MonoBehaviour
                 panel.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y - 3.5f, 0);
             }
             secmeEfekti.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, 0);
-            if (tiles.GetTile(location) == null || tiles.GetTile(location).name.Contains("coguburda_2") || tiles.GetTile(location).name.Contains("tas"))
+            if (tiles.GetTile(location) == null || tiles.GetTile(location).name.Contains("Finish") || tiles.GetTile(location).name.Contains("tas"))
             {
                 Debug.Log(31);
             }
             else
             {
-                panel.SetActive(true);
-                isOpen = true;
+                if (tiles.GetTile(location).name.Contains("bosyol_4"))
+                {
+                    DirtBuilder();
+                }
+                else if (tiles.GetTile(location).name.Contains("Dirt"))
+                {
+                    coin += decrease;
+                    AsphaltBuilder();
+                }
+                else if (tiles.GetTile(location).name.Contains("Asphalt"))
+                {
+                    coin += decrease;
+                    IceBuilder();
+                }
+                else if (tiles.GetTile(location).name.Contains("Ice"))
+                {
+                    coin += decrease;
+                    EmptyBuilder();
+                }
+                
                 if (tiles.GetTile(location).name != "bosyol_4")
                 {
                     if (tiles.GetTile(location).name.Contains("Asp") == true)
@@ -121,6 +193,74 @@ public class positionControl : MonoBehaviour
     }
     
     
+    public void DirtBuilder()
+    {
+        
+        coin -= 30;
+        if (tiles.GetTile(location).name.Contains("bosyol_4"))
+        {
+            
+            GameObject point = Instantiate(whichPoint);
+            point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
+            tileScript.points.Add(point);
+        }
+        else
+        {
+            coin += decrease;
+        }
+
+        tiles.SetTile(location, tile[0]);
+    }
+    public void AsphaltBuilder()
+    {
+        coin -= 50;
+        
+        if (tiles.GetTile(location).name.Contains("Dirt"))
+        {
+            
+            GameObject point = Instantiate(whichPoint);
+            point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
+            tileScript.points.Add(point);
+        }
+        else
+        {
+            
+            coin += decrease;
+        }
+        tiles.SetTile(location, tile[6]);
+    }
+
+    public void IceBuilder()
+    {
+        coin -= 90;
+        
+        if (tiles.GetTile(location).name.Contains("Asphalt"))
+        {
+            
+            GameObject point = Instantiate(whichPoint);
+            point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
+            tileScript.points.Add(point);
+        }
+        else
+        {
+           
+            coin += decrease;
+        }
+        tiles.SetTile(location, tile[12]);
+        
+    }
+    public void EmptyBuilder()
+    {
+        if (tiles.GetTile(location).name.Contains("Ice"))
+        {
+
+            GameObject point = Instantiate(whichPoint);
+            point.transform.position = new Vector3(tiles.CellToWorld(location).x, tiles.CellToWorld(location).y + 0.5f, tiles.CellToWorld(location).z);
+            tileScript.points.Add(point);
+        }
+        tiles.SetTile(location, tile[18]);
+
+    }
 
     public void path1()
     {

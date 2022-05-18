@@ -9,7 +9,7 @@ public class speedIndicator : MonoBehaviour
     public GameObject needle;
     public float vehicleSpeed;
 
-    private  float startPosition=270f, endPosition=-49f;
+    private  float startPosition=220f, endPosition=-49f;
     private float desiredPosition;
     private float indicatorSpeed;
 
@@ -32,6 +32,8 @@ public class speedIndicator : MonoBehaviour
     {
         desiredPosition = startPosition - endPosition;
         float temp = vehicleSpeed / 180;
-        needle.transform.eulerAngles = new Vector3(0, 0, (startPosition - temp * desiredPosition));
+        float zAngle = Mathf.LerpAngle(temp * desiredPosition,startPosition , Time.time);
+        needle.transform.eulerAngles = new Vector3(0, 0, startPosition - temp * desiredPosition);
+        //startPosition - temp * desiredPosition
     }
 }

@@ -142,6 +142,7 @@ public class CarManager : MonoBehaviour
        
         if (tiles.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition)) == tiles.WorldToCell(GameObject.Find("red_2").transform.position) && Input.GetMouseButtonDown(0))
         {
+            speed = 1;
             tileScript.points.Add(nullGameobject);
             nullGameobject.transform.position = GameObject.Find("bayraklar_0").transform.position;
             
